@@ -2,6 +2,11 @@
 name = "htmli"
 version = "0.1.0"
 authors = ["Nathan Sizemore <nathanrsizemore@gmail.com>"]
+description = "Statically resolved include directives for HTML. "
+readme = "README.md"
+keywords = ["html", "include"]
+license = "MPL-2.0"
+repository = "https://github.com/nathansizemore/htmli"
 
 [dependencies]
 docopt = "^0.7"
