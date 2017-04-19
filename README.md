@@ -7,7 +7,7 @@ Statically resolved include directives for HTML.
 htmli allows you to break up your HTML pages into smaller modules. You simply
 place a special include element:
 
-```
+``` html
 <include src="dir/file.html" />
 ```
 
