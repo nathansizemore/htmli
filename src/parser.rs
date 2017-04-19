@@ -70,8 +70,6 @@ fn parse_to_string(path: &Path,
                                   include_contents.as_str());
     }
 
-    remove_whitespace(s);
-
     Ok(())
 }
 
@@ -119,16 +117,4 @@ fn file_to_string(file: &mut File) -> Result<String, String> {
     }
 
     Ok(s)
-}
-
-fn remove_whitespace(s: &mut String) {
-    let len = s.len();
-    let mut tmp = String::with_capacity(len);
-    for c in s.chars() {
-        if c.is_whitespace() { continue; }
-        tmp.push(c);
-    }
-
-    s.clear();
-    s.push_str(tmp.as_str());
 }
