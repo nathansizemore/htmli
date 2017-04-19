@@ -21,7 +21,7 @@ use docopt::Docopt;
 mod parser;
 
 
-const VERSION_STR: &'static str = "htmli 0.1.0
+const VERSION_STR: &'static str = "htmli 0.1.1
 
 Copyright (c) 2017 Nathan Sizemore <nathanrsizemore@gmail.com>
 License: MPL-2.0 https://www.mozilla.org/en-US/MPL/2.0
