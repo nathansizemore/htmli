@@ -5,13 +5,14 @@ Statically resolved include directives for HTML.
 ---
 
 htmli allows you to break up your HTML pages into smaller modules. You simply
-place a special include element, `<include src="dir/file.html" />` where you'd
-like the contents of `dir/file.html` to live, give htmli the path of the HTML
-page, and file to write, and you're done.
+place a special include element:
 
-## About Include Elements
+```
+<include src="dir/file.html" />
+```
 
-`<include src="dir/file.html" />`
+where you'd like the contents of `dir/file.html` to live, give htmli the path
+of the HTML page, and file to write, and you're done.
 
 Include elements are resolved relative to the entry file. So if you have the
 following directory structure:
@@ -27,10 +28,9 @@ www/
 And the following HTML
 
 ``` html
-<! -- main.html  -->
+<!-- main.html  -->
 <!doctype html>
-
-<html lang="en">
+<html>
     <head></head>
     <body>
         <include src="include/nav.html" />
@@ -75,7 +75,9 @@ First, install [Rust][rust-install-url].
 
 ###### Crates.io
 
-`$ cargo install htmli`
+```
+$ cargo install htmli
+```
 
 ###### Source
 
