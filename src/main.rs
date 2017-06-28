@@ -6,6 +6,7 @@
 
 
 extern crate docopt;
+extern crate minifier;
 extern crate rustc_serialize;
 
 
@@ -16,6 +17,7 @@ use std::io::{self, Write};
 use std::path::Path;
 
 use docopt::Docopt;
+use minifier::html;
 
 
 mod parser;
@@ -32,11 +34,12 @@ const USAGE: &'static str = "
 htmli - Utility to statically resolve html-include directives.
 
 Usage:
-    htmli <file> [--output=<f>]
+    htmli <file> [--minify] [--output=<f>]
     htmli (-h | --help)
     htmli --version
 
 Options:
+    -m --minify        Minifies output.
     -o --output=<f>    Direct output to file.
 
     -h --help          Show this screen.
@@ -47,6 +50,7 @@ Options:
 #[derive(Debug, RustcDecodable)]
 pub struct Args {
     pub arg_file: String,
+    pub flag_minify: bool,
     pub flag_output: String,
     pub flag_version: bool
 }
@@ -73,7 +77,11 @@ fn handle_input(args: &Args) -> Result<(), String> {
     }
 
     let (input_path, mut input_file) = try!(open_as_file(&args.arg_file));
-    let html_str = try!(parser::parse(input_path, &mut input_file));
+    let mut html_str = try!(parser::parse(input_path, &mut input_file));
+
+    if args.flag_minify {
+        html_str = html::minify(&html_str);
+    }
 
     if args.flag_output.len() == 0 {
         println!("{}", html_str);
