@@ -1,6 +1,6 @@
 [package]
 name = "htmli"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Nathan Sizemore <nathanrsizemore@gmail.com>"]
 description = "Statically resolved include directives for HTML. "
 readme = "README.md"
