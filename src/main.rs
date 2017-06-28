@@ -7,7 +7,8 @@
 
 extern crate docopt;
 extern crate minifier;
-extern crate rustc_serialize;
+#[macro_use]
+extern crate serde_derive;
 
 
 use std::error::Error;
@@ -47,7 +48,7 @@ Options:
 ";
 
 
-#[derive(Debug, RustcDecodable)]
+#[derive(Debug, Deserialize)]
 pub struct Args {
     pub arg_file: String,
     pub flag_minify: bool,
@@ -58,7 +59,7 @@ pub struct Args {
 
 fn main() {
     let args: Args = Docopt::new(USAGE)
-        .and_then(|d| d.decode())
+        .and_then(|d| d.deserialize())
         .unwrap_or_else(|e| e.exit());
 
     match handle_input(&args) {
