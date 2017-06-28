@@ -83,6 +83,7 @@ fn handle_input(args: &Args) -> Result<(), String> {
     let output_path = Path::new(&args.flag_output);
     let mut output_file = try!(create_file(output_path));
     let result = try!(write_to_file(&mut output_file, html_str.as_bytes()));
+
     Ok(result)
 }
 
