@@ -56,11 +56,12 @@ path from the directory `main.html` is currently in.
 htmli - Utility to statically resolve html-include directives.
 
 Usage:
-    htmli <file> [--output=<f>]
+    htmli <file> [--minify] [--output=<f>]
     htmli (-h | --help)
     htmli --version
 
 Options:
+    -m --minify        Minifies output.
     -o --output=<f>    Direct output to file.
 
     -h --help          Show this screen.
