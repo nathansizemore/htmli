@@ -10,5 +10,5 @@ repository = "https://github.com/nathansizemore/htmli"
 
 [dependencies]
 docopt = "^0.7"
-minifier = { git = "https://github.com/nathansizemore/minifier-rs" }
+minifier = "^0.0.3"
 rustc-serialize = "^0.3"
