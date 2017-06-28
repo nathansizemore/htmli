@@ -1,6 +1,6 @@
 [root]
 name = "htmli"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "docopt 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "minifier 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",

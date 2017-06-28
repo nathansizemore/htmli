@@ -24,7 +24,7 @@ use minifier::html;
 mod parser;
 
 
-const VERSION_STR: &'static str = "htmli 0.1.2
+const VERSION_STR: &'static str = "htmli 0.1.3
 
 Copyright (c) 2017 Nathan Sizemore <nathanrsizemore@gmail.com>
 License: MPL-2.0 https://www.mozilla.org/en-US/MPL/2.0
